@@ -1,0 +1,25 @@
+<% layout('layout/boilerPlate') %>
+
+<div class="row mb-3 mt-4">
+    <div class="col-6 offset-3">
+        <div class="card" >
+            <img src="<%= camp.image %> " class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%= camp.title %></h5>
+              <p class="card-text"><%= camp.description %></p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><%= camp.location %></li>
+              <li class="list-group-item text-success">&#8377; <%= camp.price %> /night</li>
+            </ul>
+            <div class="card-body">
+              <a href="/campgrounds/<%= camp._id %>/edit" class="card-link btn btn-primary">Edit</a>
+              <form action="/campground/<%= camp._id%>?_method=DELETE" method="post" class="d-inline">
+                <input type="submit" value="DELETE" class="btn btn-danger">
+            </form>
+            </div>
+          </div>   
+    </div>
+</div>
+
+
